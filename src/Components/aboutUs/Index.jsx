@@ -14,7 +14,7 @@ function Index() {
           </p>
         </div>
         <div className="about-img">
-          <img src={aboutImage} alt="" srcset="" />
+          <img src={aboutImage} alt="about photho" />
         </div>
       </div>
     </>

@@ -1,32 +1,53 @@
 import React from "react";
 import { Form as FormBootstrap, Container, Button } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
+import emailjs from "@emailjs/browser";
 
 function Index() {
+  const sendEmail = (data) => {
+    // emailjs
+    //   .sendForm(
+    //     "YOUR_SERVICE_ID",
+    //     "YOUR_TEMPLATE_ID",
+    //     //form.current,
+    //     "YOUR_USER_ID"
+    //   )
+    //   .then(
+    //     (result) => {
+    //       console.log(result.text);
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //     }
+    //   );
+  };
   return (
     <Formik
       initialValues={{
         name: "",
-        description: "",
-        code: "",
+        email: "",
+        phone: "",
       }}
       validate={(data) => {
         let err = {};
         if (!data.name) {
-          err.name = "Ingrese nombre del producto";
+          err.name = "Ingrese su nombre";
         }
 
-        if (!data.description) {
-          err.description = "Ingrese descripcion del producto";
+        if (!data.email) {
+          err.email = "Ingrese su email";
         }
 
-        if (!data.code) {
-          err.code = "Ingrese descripcion del producto";
+        if (!data.phone) {
+          err.phone = "Ingrese su celular";
         }
 
         return err;
       }}
-      onSubmit={(data, { resetForm }) => {}}
+      onSubmit={(data, { resetForm }) => {
+        sendEmail(data);
+        resetForm();
+      }}
     >
       {({ errors, touched, setFieldValue, values }) => (
         <Form>
@@ -39,7 +60,7 @@ function Index() {
                 id="name"
                 as={FormBootstrap.Control}
                 name="name"
-                placeHolder="Nombre y apellido"
+                placeholder="Nombre y apellido"
                 isInvalid={touched.name && errors.name}
               />
 
@@ -50,27 +71,27 @@ function Index() {
 
             <FormBootstrap.Group className="mb-3">
               <Field
-                id="description"
+                id="email"
                 as={FormBootstrap.Control}
-                name="description"
-                placeHolder="Email"
-                isInvalid={touched.description && errors.description}
+                name="email"
+                placeholder="Email"
+                isInvalid={touched.email && errors.email}
               />
               <FormBootstrap.Control.Feedback type="invalid">
-                {errors.description}
+                {errors.email}
               </FormBootstrap.Control.Feedback>
             </FormBootstrap.Group>
 
             <FormBootstrap.Group className="mb-3">
               <Field
-                id="code"
+                id="phone"
                 as={FormBootstrap.Control}
-                name="code"
-                placeHolder="Celular"
-                isInvalid={touched.code && errors.code}
+                name="phone"
+                placeholder="Celular"
+                isInvalid={touched.phone && errors.phone}
               />
               <FormBootstrap.Control.Feedback type="invalid">
-                {errors.code}
+                {errors.phone}
               </FormBootstrap.Control.Feedback>
             </FormBootstrap.Group>
 
