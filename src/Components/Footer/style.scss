@@ -1,13 +1,22 @@
 footer {
-  padding: 1rem;
-  height: 100%;
-  background-color: #292b33;
-  color: #fff;
-  text-align: center;
-}
-
-#fan-pages {
   width: auto;
+  height: auto;
+  background-color: #292b33;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+  .information {
+    width: auto;
+    color: #fff;
+    padding: 1vh;
+  }
+  .fan-pages {
+    width: auto;
+    justify-content: center;
+    color: #fff;
+    img {
+      width: 2rem;
+    }
+  }
 }
