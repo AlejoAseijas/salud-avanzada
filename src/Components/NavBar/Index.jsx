@@ -10,7 +10,7 @@ function Index() {
     >
       <Container>
         <Navbar.Brand>
-          <img src={logo} alt="logo phtho" style={{ width: "10rem" }} />
+          <img src={logo} alt="logo phtho" style={{ width: "8rem" }} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
