@@ -12,7 +12,28 @@
     font-size: 3rem;
   }
   .carousel-container {
-    width: 75%;
+    width: 50%;
     margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #providers-container {
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #65c3e1;
+    h3 {
+      color: #fff;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .carousel-container {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 }
