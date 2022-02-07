@@ -1,0 +1,16 @@
+#providers-container {
+  background-color: rgb(41, 109, 255);
+  width: auto;
+  height: auto;
+  border: 1px solid black;
+  padding: 1rem;
+  .gallerry {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  img {
+    width: 20rem;
+  }
+}
