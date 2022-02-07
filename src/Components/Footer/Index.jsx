@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import logo from "../../assets/fb-logo.png";
 import "./style.scss";
 function Index() {
