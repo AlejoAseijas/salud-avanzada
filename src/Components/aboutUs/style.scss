@@ -1,0 +1,52 @@
+#about-container {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 50%;
+  padding: 0.5rem;
+  background-color: rgb(41, 109, 255);
+
+  .about-text {
+    width: 50%;
+    color: #fff;
+    padding: 1rem;
+    h3 {
+      text-align: center;
+      font-size: 3rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
+  .about-img {
+    width: 50%;
+    img {
+      width: 95%;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #about-container {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    background-color: rgb(41, 109, 255);
+    .about-text {
+      width: 100%;
+      margin: 0 auto;
+      color: #fff;
+      padding: 0.5rem;
+      h3 {
+        text-align: center;
+      }
+    }
+    .about-img {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

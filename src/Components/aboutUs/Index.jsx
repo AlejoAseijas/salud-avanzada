@@ -1,12 +1,24 @@
-import React from 'react';
-
+import React from "react";
+import aboutImage from "../../assets/background.jpeg";
+import "./style.scss";
 function Index() {
-  return <>
-  <div className='p-2'>
-  <h3 className='text-center' style={{color:'#fff'}}>Quienes Somos</h3>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint aliquid illum facilis autem perspiciatis nostrum aliquam iure saepe, rem debitis quae quasi? Ut molestiae provident accusamus omnis illum voluptates. Pariatur!</p>    
-  </div>
-</>
+  return (
+    <>
+      <div id="about-container">
+        <div className="about-text">
+          <h3>Quienes Somos</h3>
+          <p>
+            Somos una empresa Argentina que se concentra en medicina privada mas
+            de 10 años avalan nuestra experiencia en soluciones de cobertura
+            medica.
+          </p>
+        </div>
+        <div className="about-img">
+          <img src={aboutImage} alt="" srcset="" />
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Index;
