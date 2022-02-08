@@ -7,22 +7,44 @@ function Index() {
     <Navbar
       collapseOnSelect
       expand="lg"
-      style={{ backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+      style={{
+        backgroundColor: "rgba(255, 255, 255, 0.3)",
+        fontFamily: "'Open Sans', sans-serif",
+      }}
     >
       <Container>
         <Navbar.Brand>
           <img
             src={logo}
             alt="logo phtho"
-            style={{ width: "8rem", borderRadius: "8px" }}
+            style={{ width: "11rem", borderRadius: "8px" }}
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" style={{ display: "flex", gap: "1rem" }}>
-            <Link to="about-container">Quienes Somos</Link>
-            <Link to="providers-container">Principales Prestadores</Link>
-            <Link to="contact-container">Contacto</Link>
+            <Link
+              to="about-container"
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                color: "#fff",
+                fontWeight: "1rem",
+              }}
+            >
+              Quienes Somos
+            </Link>
+            <Link
+              to="providers-container"
+              style={{ fontFamily: "'Open Sans', sans-serif", color: "#fff" }}
+            >
+              Principales Prestadores
+            </Link>
+            <Link
+              to="contact-container"
+              style={{ fontFamily: "'Open Sans', sans-serif", color: "#fff" }}
+            >
+              Contacto
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

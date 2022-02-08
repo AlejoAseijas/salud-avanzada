@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 
 function Index() {
   const sendEmail = (data) => {
+    console.log(data);
     // emailjs
     //   .sendForm(
     //     "YOUR_SERVICE_ID",
@@ -27,6 +28,8 @@ function Index() {
         name: "",
         email: "",
         phone: "",
+        familiarGroup: "",
+        ages: "",
       }}
       validate={(data) => {
         let err = {};
@@ -40,6 +43,14 @@ function Index() {
 
         if (!data.phone) {
           err.phone = "Ingrese su celular";
+        }
+
+        if (!data.familiarGroup) {
+          err.familiarGroup = "Ingrese la cantidad de personas";
+        }
+
+        if (!data.ages) {
+          err.ages = "Ingrese las edades";
         }
 
         return err;
@@ -79,6 +90,32 @@ function Index() {
               />
               <FormBootstrap.Control.Feedback type="invalid">
                 {errors.email}
+              </FormBootstrap.Control.Feedback>
+            </FormBootstrap.Group>
+
+            <FormBootstrap.Group className="mb-3">
+              <Field
+                id="familiarGroup"
+                as={FormBootstrap.Control}
+                name="familiarGroup"
+                placeholder="Cantidad de persona del grupo familiar"
+                isInvalid={touched.familiarGroup && errors.familiarGroup}
+              />
+              <FormBootstrap.Control.Feedback type="invalid">
+                {errors.familiarGroup}
+              </FormBootstrap.Control.Feedback>
+            </FormBootstrap.Group>
+
+            <FormBootstrap.Group className="mb-3">
+              <Field
+                id="ages"
+                as={FormBootstrap.Control}
+                name="ages"
+                placeholder="Edades de las personas, separadas por una coma"
+                isInvalid={touched.ages && errors.ages}
+              />
+              <FormBootstrap.Control.Feedback type="invalid">
+                {errors.ages}
               </FormBootstrap.Control.Feedback>
             </FormBootstrap.Group>
 
