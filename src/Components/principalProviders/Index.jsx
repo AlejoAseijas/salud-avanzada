@@ -2,7 +2,7 @@ import React from "react";
 import doctoredLogo from "../../assets/providers/doctored-logo.jpeg";
 import premedicLogo from "../../assets/providers/premedic-logo.jpeg";
 import sancorsaludLogo from "../../assets/providers/sancorsalud-logo.jpeg";
-import galenoLogo from "../../assets/providers/galeno-logo.jpeg";
+import galenoLogo from "../../assets/providers/galeno-logo.png";
 import { Carousel } from "react-bootstrap";
 import "./style.scss";
 function Index() {
