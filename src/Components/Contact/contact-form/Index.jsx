@@ -1,26 +1,28 @@
 import React from "react";
 import { Form as FormBootstrap, Container, Button } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
-import emailjs from "@emailjs/browser";
-
+import axios from "axios";
+import { send } from "emailjs-com";
 function Index() {
-  const sendEmail = (data) => {
-    console.log(data);
-    // emailjs
-    //   .sendForm(
-    //     "YOUR_SERVICE_ID",
-    //     "YOUR_TEMPLATE_ID",
-    //     //form.current,
-    //     "YOUR_USER_ID"
-    //   )
-    //   .then(
-    //     (result) => {
-    //       console.log(result.text);
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
+  const sendEmail = async (data) => {
+    send(
+      "service_8dhn9lm",
+      "template_59i6kwa",
+      {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        familiarGroup: data.familiarGroup,
+        ages: data.ages,
+      },
+      "user_HTmwQ5CSGJRahoaxqmonE"
+    )
+      .then((response) => {
+        return console.log("ok");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <Formik
