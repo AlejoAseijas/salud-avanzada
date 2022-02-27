@@ -24,38 +24,21 @@ function Index() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto" style={{ display: "flex", gap: "1rem" }}>
-            <Link
-              to="about-container"
-              style={{
-                fontFamily: "'Open Sans', sans-serif",
-                color: "#fff",
-                fontWeight: "1rem",
-              }}
-            >
-              Quienes Somos
-            </Link>
-            <Link
-              to="providers-container"
-              style={{ fontFamily: "'Open Sans', sans-serif", color: "#fff" }}
-            >
-              Principales Prestadores
-            </Link>
-            <Link
-              to="contact-container"
-              style={{ fontFamily: "'Open Sans', sans-serif", color: "#fff" }}
-            >
-              Contacto
-            </Link>
-          </Nav>
+          <Nav
+            className="me-auto"
+            style={{ display: "flex", gap: "1rem" }}
+          ></Nav>
           <Nav>
             <Link
               onClick={() => {
-                navigate("/logIn");
+                navigate("/");
               }}
-              style={{ fontFamily: "'Open Sans', sans-serif", color: "#fff" }}
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                color: "#ff3232",
+              }}
             >
-              Log In
+              Log Out
             </Link>
           </Nav>
         </Navbar.Collapse>
