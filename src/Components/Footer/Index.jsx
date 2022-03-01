@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/fb-logo.png";
+import wspLogo from "../../assets/wspLogo.png";
 import "./style.scss";
 function Index() {
   return (
@@ -21,6 +22,15 @@ function Index() {
           alt="fb-logo"
           onClick={() => {
             return window.open("https://www.facebook.com/Avanzamos.juntos");
+          }}
+        />
+        <img
+          src={wspLogo}
+          alt="wsp-logo"
+          onClick={() => {
+            return window.open(
+              "https://api.whatsapp.com/send?phone=541169986500&text=Hola%2C%20como%20estan%3F%20Estoy%20interesado%20en..."
+            );
           }}
         />
       </div>

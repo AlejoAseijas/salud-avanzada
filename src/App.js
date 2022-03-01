@@ -5,8 +5,23 @@ import LogIn from "./Components/Auth/Index";
 import GalenoCotizador from "./views/galeno-cotizador/Index";
 import "./app.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Swal from "sweetalert2";
+import audio from "./assets/backgroundSound.mp3";
 
 function App() {
+  const playAudio = () => {
+    Swal.fire({
+      icon: "question",
+      title: "Desea escuhar musica de fondo?",
+      showDenyButton: true,
+      confirmButtonText: "si",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        new Audio(audio).play();
+      }
+    });
+  };
+  playAudio();
   return (
     <>
       <BrowserRouter>
