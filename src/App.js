@@ -7,29 +7,15 @@ import DoctoredCotizador from "./views/doctored-cotizador/Index";
 import PremedicCotizador from "./views/premedic-cotizador/Index";
 import "./app.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Swal from "sweetalert2";
-import audio from "./assets/backgroundSound.mp3";
 import Download from "./views/download/Index";
 import Users from "./views/Users/Index";
 import { isUser } from "./services/index";
 function App() {
-  const playAudio = () => {
-    Swal.fire({
-      icon: "question",
-      title: "Desea escuhar musica de fondo?",
-      showDenyButton: true,
-      confirmButtonText: "si",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        new Audio(audio).play();
-      }
-    });
-  };
-  playAudio();
-
+  const [isLogin, setIsLogin] = useState(false);
   useEffect(() => {
     const users = async () => {
-      await isUser();
+      let state = await isUser();
+      setIsLogin(state);
     };
     users();
   }, []);
@@ -39,13 +25,31 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/logIn" element={<LogIn />} />
-          <Route path="/dashboard" element={<DashBoard />} />
-          <Route path="/dashboard/galeno" element={<GalenoCotizador />} />
-          <Route path="/dashboard/doctored" element={<DoctoredCotizador />} />
-          <Route path="/dashboard/premedic" element={<PremedicCotizador />} />
-          <Route path="/dashboard/download" element={<Download />} />
-          <Route path="/dashboard/users" element={<Users />} />
+          <Route path="/logIn" element={isLogin ? <DashBoard /> : <LogIn />} />
+          <Route
+            path="/dashboard"
+            element={isLogin ? <DashBoard /> : <LogIn />}
+          />
+          <Route
+            path="/dashboard/galeno"
+            element={isLogin ? <GalenoCotizador /> : <LogIn />}
+          />
+          <Route
+            path="/dashboard/doctored"
+            element={isLogin ? <DoctoredCotizador /> : <LogIn />}
+          />
+          <Route
+            path="/dashboard/premedic"
+            element={isLogin ? <PremedicCotizador /> : <LogIn />}
+          />
+          <Route
+            path="/dashboard/download"
+            element={isLogin ? <Download /> : <LogIn />}
+          />
+          <Route
+            path="/dashboard/users"
+            element={isLogin ? <Users /> : <LogIn />}
+          />
         </Routes>
       </BrowserRouter>
     </>

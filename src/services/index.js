@@ -57,12 +57,10 @@ const isUser = async () => {
     let dataUser = JSON.parse(localStorage.getItem("data-user"));
     let token = dataUser.token;
     let config = {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
+      headers: { Authorization: `Bearer ${token}` },
     };
-    let res = await axios.post(url, config);
-    console.log("res");
+    let res = await axios.post(url, null, config);
+    return res.data.success;
   } catch (err) {}
 };
 

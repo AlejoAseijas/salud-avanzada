@@ -6,7 +6,6 @@ import { getQuote } from "../../services/index";
 import { useNavigate } from "react-router-dom";
 function Index() {
   let dataLocal = JSON.parse(localStorage.getItem("data-user"));
-  let operatorName = dataLocal.name + " " + dataLocal.lastName;
   const navigate = useNavigate();
 
   const handlerClick = async (data) => {
@@ -40,7 +39,8 @@ function Index() {
         typeContact: data.typeContact,
       };
       let res = await getQuote(quoteToSend);
-      return localStorage.setItem("quote", JSON.stringify(res.data.data));
+      localStorage.setItem("quote", JSON.stringify(res.data.data));
+      return navigate("/dashboard/download");
     } catch (err) {
       return err;
     }

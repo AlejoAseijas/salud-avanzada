@@ -14,6 +14,7 @@ function Index() {
       console.log(data);
       if (res.data.success) {
         navigate("/dashboard");
+        window.location.reload();
       }
     } catch (err) {
       alert("error", err);
