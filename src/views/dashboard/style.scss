@@ -1,11 +1,13 @@
 #dashboard-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 2rem;
    background-color: rgba(255, 255, 255, 0.3);
-    height: 20vh;
+    height: auto;
     width: auto;
-    margin-top: 25vh;
+    margin: 0 auto;
+    margin-top: 10vh;
     justify-content: center;
     padding: .5rem;
     img{

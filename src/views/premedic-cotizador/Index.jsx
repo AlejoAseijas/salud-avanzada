@@ -16,7 +16,7 @@ function Index() {
           <Formik
             initialValues={{
               operator: operatorName,
-              provider: "galeno",
+              provider: "premedic",
               contact: "",
               amount: 0,
               group: "",
@@ -61,9 +61,8 @@ function Index() {
                     isInvalid={touched.contact && errors.contact}
                   >
                     <option>Selecione un tipo afiliado</option>
-                    <option value="galeno-privado">PRIVADO</option>
-                    <option value="galeno-desregulado">DESREGULADO</option>
-                    <option value="galeno-monotributo">MONOTRIBUTO</option>
+                    <option value="premedic-privado">PRIVADO</option>
+                    <option value="premedic-desregulado">DESREGULADO</option>
                   </Field>
                   <FormBootstrap.Control.Feedback type="invalid">
                     {errors.contact}
@@ -106,146 +105,87 @@ function Index() {
                   >
                     <option label="Selecione un grupo" />
                     <option
-                      label="Individual hasta 25"
-                      value="IndividualHasta25"
+                      label="Individual hasta 29"
+                      value="IndividualHasta29"
                     />
                     <option
-                      label="Individual hasta 36"
-                      value="IndividualHasta36"
+                      label="Individual hasta 39"
+                      value="IndividualHasta39"
                     />
                     <option
-                      label="Individual hasta 64"
-                      value="IndividualHasta64"
-                    />
-
-                    <option
-                      label="Individual hasta 25 con 1 hijo"
-                      value="IndividualHasta25Con1Hijo"
+                      label="Individual hasta 49"
+                      value="IndividualHasta49"
                     />
                     <option
-                      label="Individual hasta 25 con 2 hijos"
-                      value="IndividualHasta25Con2Hijo"
-                    />
-                    <option
-                      label="Individual hasta 36 con 1 hijo"
-                      value="IndividualHasta36Con1Hijo"
-                    />
-                    <option
-                      label="Individual hasta 36 con 2 hijos"
-                      value="IndividualHasta36Con2Hijo"
-                    />
-                    <option
-                      label="Individual hasta 36 con 3 hijos"
-                      value="IndividualHasta36Con3Hijo"
-                    />
-                    <option
-                      label="Individual hasta 36 con 4 hijos"
-                      value="IndividualHasta36Con4Hijo"
-                    />
-                    <option
-                      label="Individual hasta 36 con 5 hijos"
-                      value="IndividualHasta36Con5Hijo"
-                    />
-                    <option
-                      label="Individual hasta 36 con 6 hijos"
-                      value="IndividualHasta36Con6Hijo"
+                      label="Individual hasta 59"
+                      value="IndividualHasta59"
                     />
 
                     <option
-                      label="Individual hasta 64 con 1 hijo"
-                      value="IndividualHasta64Con1Hijo"
+                      label="Matrimonio hasta 29"
+                      value="MatrimonioHasta29"
                     />
                     <option
-                      label="Individual hasta 64 con 2 hijos"
-                      value="IndividualHasta64Con2Hijo"
+                      label="Matrimonio hasta 39"
+                      value="MatrimonioHasta39"
                     />
                     <option
-                      label="Individual hasta 64 con 3 hijos"
-                      value="IndividualHasta64Con3Hijo"
+                      label="Matrimonio hasta 49"
+                      value="MatrimonioHasta49"
                     />
                     <option
-                      label="Individual hasta 64 con 4 hijos"
-                      value="IndividualHasta64Con4Hijo"
-                    />
-                    <option
-                      label="Individual hasta 64 con 5 hijos"
-                      value="IndividualHasta64Con5Hijo"
-                    />
-                    <option
-                      label="Individual hasta 64 con 6 hijos"
-                      value="IndividualHasta64Con6Hijo"
+                      label="Matrimonio hasta 59"
+                      value="MatrimonioHasta59"
                     />
 
                     <option
-                      label="Matrimonio hasta 25"
-                      value="MatrimonioHasta25"
+                      label="Matrimonio hasta 29 con 1 hijo"
+                      value="MatrimonioHasta29Con1Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 36"
-                      value="MatrimonioHasta36"
+                      label="Matrimonio hasta 29 con 2 hijos"
+                      value="MatrimonioHasta29Con2Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 64"
-                      value="MatrimonioHasta64"
-                    />
-
-                    <option
-                      label="Matrimonio hasta 25 con 1 hijo"
-                      value="MatrimonioHasta25Con1Hijo"
-                    />
-                    <option
-                      label="Matrimonio hasta 25 con 2 hijos"
-                      value="MatrimonioHasta25Con2Hijo"
+                      label="Matrimonio hasta 29 con 3hijos"
+                      value="MatrimonioHasta29Con3Hijo"
                     />
 
                     <option
-                      label="Matrimonio hasta 36 con 1 hijo"
-                      value="MatrimonioHasta36Con1Hijo"
+                      label="Matrimonio hasta 39 con 1 hijo"
+                      value="MatrimonioHasta39Con1Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 36 con 2 hijos"
-                      value="MatrimonioHasta36Con2Hijo"
+                      label="Matrimonio hasta 39 con 2 hijos"
+                      value="MatrimonioHasta39Con2Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 36 con 3 hijos"
-                      value="MatrimonioHasta36Con3Hijo"
+                      label="Matrimonio hasta 39 con 3 hijos"
+                      value="MatrimonioHasta39Con3Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 36 con 4 hijos"
-                      value="MatrimonioHasta36Con4Hijo"
+                      label="Matrimonio hasta 49 con 1 hijo"
+                      value="MatrimonioHasta49Con1Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 36 con 5 hijos"
-                      value="MatrimonioHasta36Con5Hijo"
+                      label="Matrimonio hasta 49 con 2 hijos"
+                      value="MatrimonioHasta49Con2Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 36 con 6 hijos"
-                      value="MatrimonioHasta36Con6Hijo"
-                    />
-
-                    <option
-                      label="Matrimonio hasta 64 con 1 hijo"
-                      value="MatrimonioHasta64Con1Hijo"
+                      label="Matrimonio hasta 49 con 3 hijos"
+                      value="MatrimonioHasta49Con3Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 64 con 2 hijos"
-                      value="MatrimonioHasta64Con2Hijo"
+                      label="Matrimonio hasta 59 con 1 hijos"
+                      value="MatrimonioHasta59Con1Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 64 con 3 hijos"
-                      value="MatrimonioHasta64Con3Hijo"
+                      label="Matrimonio hasta 59 con 2 hijos"
+                      value="MatrimonioHasta59Con2Hijo"
                     />
                     <option
-                      label="Matrimonio hasta 64 con 4 hijos"
-                      value="MatrimonioHasta64Con4Hijo"
-                    />
-                    <option
-                      label="Matrimonio hasta 64 con 5 hijos"
-                      value="MatrimonioHasta64Con5Hijo"
-                    />
-                    <option
-                      label="Matrimonio hasta 64 con 6 hijos"
-                      value="MatrimonioHasta64Con6Hijo"
+                      label="Matrimonio hasta 59 con 3 hijos"
+                      value="MatrimonioHasta59Con3Hijo"
                     />
                   </Field>
                 </FormBootstrap.Group>
@@ -264,10 +204,11 @@ function Index() {
                     name="typePlan"
                   >
                     <option>Selecione un plan</option>
-                    <option value="PLAN220">220</option>
-                    <option value="PLAN330">330</option>
-                    <option value="PLAN440">440</option>
-                    <option value="PLAN550">550</option>
+                    <option value="PLAN100">100</option>
+                    <option value="PLAN200">200</option>
+                    <option value="PLAN300">300</option>
+                    <option value="PLAN400">400</option>
+                    <option value="PLAN500">500</option>
                   </Field>
                 </FormBootstrap.Group>
 

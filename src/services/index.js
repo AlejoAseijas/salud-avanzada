@@ -11,4 +11,14 @@ const logIn = async (data) => {
   }
 };
 
-export { logIn };
+const getQuote = async (data) => {
+  try {
+    const url = `${process.env.REACT_APP_API}/quote/${data.provider}`;
+    let res = await axios.post(url, data);
+    return res;
+  } catch (err) {
+    return err;
+  }
+};
+
+export { logIn, getQuote };

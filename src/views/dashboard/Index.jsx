@@ -11,7 +11,6 @@ function Index() {
   return (
     <>
       <NavBar />
-      <h1 className="text-center">Cotizadores</h1>
       <Container id="dashboard-container">
         <img
           src={galenoLogo}
@@ -20,8 +19,20 @@ function Index() {
             navigate("/dashboard/galeno");
           }}
         />
-        <img src={doctoredLogo} alt="doctoredLogo" />
-        <img src={premedicLogo} alt="premedicLogo" />
+        <img
+          src={doctoredLogo}
+          alt="doctoredLogo"
+          onClick={() => {
+            navigate("/dashboard/doctored");
+          }}
+        />
+        <img
+          src={premedicLogo}
+          alt="premedicLogo"
+          onClick={() => {
+            navigate("/dashboard/premedic");
+          }}
+        />
       </Container>
     </>
   );
