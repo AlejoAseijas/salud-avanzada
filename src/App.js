@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Home from "./views/Home/Index";
 import DashBoard from "./views/dashboard/Index";
 import LogIn from "./Components/Auth/Index";
@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
 import audio from "./assets/backgroundSound.mp3";
 import Download from "./views/download/Index";
 import Users from "./views/Users/Index";
+import { isUser } from "./services/index";
 function App() {
   const playAudio = () => {
     Swal.fire({
@@ -25,6 +26,14 @@ function App() {
     });
   };
   playAudio();
+
+  useEffect(() => {
+    const users = async () => {
+      await isUser();
+    };
+    users();
+  }, []);
+
   return (
     <>
       <BrowserRouter>

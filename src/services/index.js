@@ -51,4 +51,19 @@ const deleteUser = async (dni) => {
   }
 };
 
-export { logIn, getQuote, getAllUsers, createUser, deleteUser };
+const isUser = async () => {
+  try {
+    const url = `${process.env.REACT_APP_API}/isUser`;
+    let dataUser = JSON.parse(localStorage.getItem("data-user"));
+    let token = dataUser.token;
+    let config = {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    };
+    let res = await axios.post(url, config);
+    console.log("res");
+  } catch (err) {}
+};
+
+export { logIn, getQuote, getAllUsers, createUser, deleteUser, isUser };
