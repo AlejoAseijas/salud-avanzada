@@ -64,4 +64,15 @@ const isUser = async () => {
   } catch (err) {}
 };
 
-export { logIn, getQuote, getAllUsers, createUser, deleteUser, isUser };
+const logOut = async (dniNumber) => {
+  try {
+    const url = `${process.env.REACT_APP_API}/logOut`;
+    let data = JSON.parse(localStorage.getItem("data-user"));
+    await axios.post(url, { dni: data.dni });
+    localStorage.removeItem("data-user");
+  } catch (err) {
+    return err;
+  }
+};
+
+export { logIn, getQuote, getAllUsers, createUser, deleteUser, isUser, logOut };

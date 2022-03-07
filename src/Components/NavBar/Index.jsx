@@ -3,6 +3,8 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 import { Link } from "react-scroll";
 import logo from "../../assets/logo.jpg";
 import { useNavigate } from "react-router-dom";
+import { logOut } from "../../services/index";
+
 function Index() {
   const navigate = useNavigate();
   return (
@@ -50,7 +52,8 @@ function Index() {
           </Nav>
           <Nav>
             <Link
-              onClick={() => {
+              onClick={async () => {
+                await logOut();
                 navigate("/logIn");
               }}
               style={{ fontFamily: "'Open Sans', sans-serif", color: "#fff" }}
