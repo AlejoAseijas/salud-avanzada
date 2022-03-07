@@ -11,6 +11,7 @@ function Index() {
   const auth = async (data) => {
     try {
       let res = await logIn(data);
+      console.log(res);
       if (res.data.success) {
         navigate("/dashboard");
       }

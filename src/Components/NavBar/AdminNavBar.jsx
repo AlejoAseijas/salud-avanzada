@@ -5,6 +5,7 @@ import logo from "../../assets/logo.jpg";
 import { useNavigate } from "react-router-dom";
 function Index() {
   const navigate = useNavigate();
+
   return (
     <Navbar
       collapseOnSelect

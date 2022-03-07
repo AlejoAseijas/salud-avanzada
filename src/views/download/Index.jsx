@@ -4,8 +4,8 @@ import { PDFExport } from "@progress/kendo-react-pdf";
 import doctoredLogo from "../../assets/providers/doctoredPdf.png";
 import galenoLogo from "../../assets/providers/galenoPdf.png";
 import premedicLogo from "../../assets/providers/premedicPdf.jpg";
-
 import NavBar from "../../Components/NavBar/AdminNavBar";
+
 function Index() {
   const dataQuote = JSON.parse(localStorage.getItem("quote"));
   const pdfExportComponent = useRef(null);
@@ -88,7 +88,10 @@ function Index() {
                   </table>
                   <div className="container text-center">
                     {dataQuote.plan === "DOCTORED1000" ? (
-                      <a href="https://drive.google.com/file/d/1qsTKn2szrE4dtbRwiXfO0PWzAjQaFM9M/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1qsTKn2szrE4dtbRwiXfO0PWzAjQaFM9M/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -96,7 +99,10 @@ function Index() {
                     )}
 
                     {dataQuote.plan === "DOCTORED2000" ? (
-                      <a href="https://drive.google.com/file/d/1axsP31nVKuQQrha5UKs_3n3AVEim1Hc8/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1axsP31nVKuQQrha5UKs_3n3AVEim1Hc8/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -105,7 +111,10 @@ function Index() {
       `
                     )}
                     {dataQuote.plan === "DOCTORED3000" ? (
-                      <a href="https://drive.google.com/file/d/1BoB1Y3lg0AGvHd7rT4zyTtW6g3PKtv64/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1BoB1Y3lg0AGvHd7rT4zyTtW6g3PKtv64/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -193,7 +202,10 @@ function Index() {
                   <div className="container text-center">
                     {dataQuote.provider === "galeno" &&
                     dataQuote.plan === "PLAN220" ? (
-                      <a href="https://drive.google.com/file/d/1VIiG8uipd2zQPaZACv4xL7C0g6GzlL6x/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1VIiG8uipd2zQPaZACv4xL7C0g6GzlL6x/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -201,7 +213,10 @@ function Index() {
                     )}
                     {dataQuote.provider === "galeno" &&
                     dataQuote.plan === "PLAN330" ? (
-                      <a href="https://drive.google.com/file/d/1GIysSZ2eQomuPgQZVzxuAD8TnctUGAKN/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1GIysSZ2eQomuPgQZVzxuAD8TnctUGAKN/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -209,7 +224,10 @@ function Index() {
                     )}
                     {dataQuote.provider === "galeno" &&
                     dataQuote.plan === "PLAN440" ? (
-                      <a href="https://drive.google.com/file/d/1FIe09pr173AeIBQLjbHmhh5ikvAGVuFq/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1FIe09pr173AeIBQLjbHmhh5ikvAGVuFq/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -217,7 +235,10 @@ function Index() {
                     )}
                     {dataQuote.provider === "galeno" &&
                     dataQuote.plan === "PLAN550" ? (
-                      <a href="https://drive.google.com/file/d/14uf5ECFcqcpJyah2nVWcGQXCtJxYG4C9/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/14uf5ECFcqcpJyah2nVWcGQXCtJxYG4C9/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -225,7 +246,10 @@ function Index() {
                     )}
                     {dataQuote.provider === "premedic" &&
                     dataQuote.plan === "PLAN100" ? (
-                      <a href="https://drive.google.com/file/d/1MzvMa_0BSxf7AJuTLptZT3xFrWMutP8f/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1MzvMa_0BSxf7AJuTLptZT3xFrWMutP8f/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -233,7 +257,10 @@ function Index() {
                     )}
                     {dataQuote.provider === "premedic" &&
                     dataQuote.plan === "PLAN200" ? (
-                      <a href="https://drive.google.com/file/d/1qT9NTj2ZjZduZH0cXOUJhDcS9r4btHMQ/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1qT9NTj2ZjZduZH0cXOUJhDcS9r4btHMQ/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -241,7 +268,10 @@ function Index() {
                     )}
                     {dataQuote.provider === "premedic" &&
                     dataQuote.plan === "PLAN300" ? (
-                      <a href="https://drive.google.com/file/d/1XhooQhmBRRIouAbznfMj2QsP5VYmq0nY/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1XhooQhmBRRIouAbznfMj2QsP5VYmq0nY/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -249,7 +279,10 @@ function Index() {
                     )}
                     {dataQuote.provider === "premedic" &&
                     dataQuote.plan === "PLAN400" ? (
-                      <a href="https://drive.google.com/file/d/1koyqfxk9c7VRmQIBArACrwIlPy1a-MU6/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1koyqfxk9c7VRmQIBArACrwIlPy1a-MU6/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (
@@ -257,7 +290,10 @@ function Index() {
                     )}
                     {dataQuote.provider === "premedic" &&
                     dataQuote.plan === "PLAN500" ? (
-                      <a href="https://drive.google.com/file/d/1RsCNcI8gi3gmpC7zzzn0M-82iTJzBUl_/view?usp=sharing">
+                      <a
+                        className="link"
+                        href="https://drive.google.com/file/d/1RsCNcI8gi3gmpC7zzzn0M-82iTJzBUl_/view?usp=sharing"
+                      >
                         VER CARTILLA
                       </a>
                     ) : (

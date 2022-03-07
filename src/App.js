@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Swal from "sweetalert2";
 import audio from "./assets/backgroundSound.mp3";
 import Download from "./views/download/Index";
+import Users from "./views/Users/Index";
 function App() {
   const playAudio = () => {
     Swal.fire({
@@ -35,6 +36,7 @@ function App() {
           <Route path="/dashboard/doctored" element={<DoctoredCotizador />} />
           <Route path="/dashboard/premedic" element={<PremedicCotizador />} />
           <Route path="/dashboard/download" element={<Download />} />
+          <Route path="/dashboard/users" element={<Users />} />
         </Routes>
       </BrowserRouter>
     </>

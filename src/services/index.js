@@ -21,4 +21,34 @@ const getQuote = async (data) => {
   }
 };
 
-export { logIn, getQuote };
+const getAllUsers = async () => {
+  try {
+    const url = `${process.env.REACT_APP_API}/usuario`;
+    let res = await axios.get(url);
+    return res;
+  } catch (err) {
+    return err;
+  }
+};
+
+const createUser = async (data) => {
+  try {
+    const url = `${process.env.REACT_APP_API}/usuario`;
+    let res = await axios.post(url, data);
+    return window.location.reload();
+  } catch (err) {
+    return err;
+  }
+};
+
+const deleteUser = async (dni) => {
+  try {
+    const url = `${process.env.REACT_APP_API}/usuario/${dni}`;
+    let res = await axios.delete(url);
+    return window.location.reload();
+  } catch (err) {
+    return err;
+  }
+};
+
+export { logIn, getQuote, getAllUsers, createUser, deleteUser };
