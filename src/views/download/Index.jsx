@@ -37,7 +37,6 @@ function Index() {
                 <div className="data-information-contact">
                   <h1>Cotizacion</h1>
                   <div className="information">
-                    <h4>Dia: {dataQuote.day}</h4>
                     <h4>Generado por: {dataQuote.operator}</h4>
                   </div>
                   <br />
@@ -166,7 +165,6 @@ function Index() {
                 <div className="data-information-contact">
                   <h1>Cotizacion</h1>
                   <div className="information">
-                    <h4>Dia: {dataQuote.day}</h4>
                     <h4>Generado por: {dataQuote.operator}</h4>
                   </div>
                   <br />
