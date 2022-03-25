@@ -5,6 +5,7 @@ import "./style.scss";
 import galenoLogo from "../../assets/providers/galeno-logo.png";
 import doctoredLogo from "../../assets/providers/doctored-logo.jpeg";
 import premedicLogo from "../../assets/providers/premedic-logo.jpeg";
+import saludCentralLogo from "../../assets/providers/saludcentral.jpg";
 import { useNavigate } from "react-router-dom";
 
 function Index() {
@@ -38,6 +39,15 @@ function Index() {
             alt="premedicLogo"
             onClick={() => {
               navigate("/dashboard/premedic");
+            }}
+          />
+        </Container>
+        <Container className="img-container">
+          <img
+            src={saludCentralLogo}
+            alt="saludcentralogo"
+            onClick={() => {
+              navigate("/dashboard/saludcentral");
             }}
           />
         </Container>

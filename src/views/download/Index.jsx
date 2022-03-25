@@ -4,6 +4,7 @@ import { PDFExport } from "@progress/kendo-react-pdf";
 import doctoredLogo from "../../assets/providers/doctoredPdf.png";
 import galenoLogo from "../../assets/providers/galenoPdf.png";
 import premedicLogo from "../../assets/providers/premedicPdf.jpg";
+import saludCentralLogo from "../../assets/providers/saludcentral.jpg";
 import NavBar from "../../Components/NavBar/AdminNavBar";
 
 function Index() {
@@ -160,6 +161,15 @@ function Index() {
                       <img src={premedicLogo} alt="photho-logo" />
                     </div>
                   )}
+                  {dataQuote.provider === "SaludCentral" && (
+                    <div className="pricipal-provider-logo">
+                      <img
+                        src={saludCentralLogo}
+                        alt="photho-logo"
+                        className="mt-3"
+                      />
+                    </div>
+                  )}
                 </header>
                 <div className="tableContainer"></div>
                 <div className="data-information-contact">
@@ -180,16 +190,30 @@ function Index() {
                     <tbody>
                       <tr>
                         <td>{dataQuote.group}</td>
-                        <td>$ {dataQuote.planPrice}</td>
+                        {dataQuote.provider === "SaludCentral" ? (
+                          <td>$ {dataQuote.client}</td>
+                        ) : (
+                          <td>$ {dataQuote.planPrice}</td>
+                        )}
                       </tr>
 
-                      {dataQuote.discount === 0 ? (
+                      {(dataQuote.discount === 0) |
+                      (dataQuote.provider === "SaludCentral") ? (
                         ``
                       ) : (
                         <tr>
                           <td>Descuento por aporte</td>
                           <td>-{dataQuote.discount}</td>
                         </tr>
+                      )}
+                      {dataQuote.provider === "SaludCentral" &&
+                      dataQuote.quantyChildrens > 0 ? (
+                        <tr>
+                          <td>Hijo/s {dataQuote.quantyChildrens}</td>
+                          <td>$ {dataQuote.childrens}</td>
+                        </tr>
+                      ) : (
+                        ``
                       )}
                       <tr id="final-price">
                         <td className="price">Precio final</td>
