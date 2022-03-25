@@ -5,6 +5,7 @@ import LogIn from "./Components/Auth/Index";
 import GalenoCotizador from "./views/galeno-cotizador/Index";
 import DoctoredCotizador from "./views/doctored-cotizador/Index";
 import PremedicCotizador from "./views/premedic-cotizador/Index";
+import SaludCentralContizador from "./views/saludCentral/Index";
 import "./app.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Download from "./views/download/Index";
@@ -41,6 +42,10 @@ function App() {
           <Route
             path="/dashboard/premedic"
             element={isLogin ? <PremedicCotizador /> : <LogIn />}
+          />
+          <Route
+            path="/dashboard/saludcentral"
+            element={isLogin ? <SaludCentralContizador /> : <LogIn />}
           />
           <Route
             path="/dashboard/download"
