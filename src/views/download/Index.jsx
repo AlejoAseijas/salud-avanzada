@@ -161,7 +161,7 @@ function Index() {
                       <img src={premedicLogo} alt="photho-logo" />
                     </div>
                   )}
-                  {dataQuote.provider === "SaludCentral" && (
+                  {dataQuote.provider === "Salud Central" && (
                     <div className="pricipal-provider-logo">
                       <img
                         src={saludCentralLogo}
@@ -189,16 +189,56 @@ function Index() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{dataQuote.group}</td>
-                        {dataQuote.provider === "SaludCentral" ? (
-                          <td>$ {dataQuote.client}</td>
+                        {dataQuote.provider === "Salud Central" ? (
+                          dataQuote.client === 0 ? (
+                            <td>Matrimonio</td>
+                          ) : (
+                            <td>Cliente {dataQuote.ageClient}</td>
+                          )
+                        ) : (
+                          <td>{dataQuote.group}</td>
+                        )}
+                        {dataQuote.provider === "Salud Central" ? (
+                          dataQuote.client === 0 ? (
+                            <td>$ {dataQuote.married}</td>
+                          ) : (
+                            <td>$ {dataQuote.client}</td>
+                          )
                         ) : (
                           <td>$ {dataQuote.planPrice}</td>
                         )}
                       </tr>
 
+                      {(dataQuote.provider === "Salud Central") |
+                      (dataQuote.patner === 0) ? (
+                        <>
+                          <td style={{ textAlign: "center" }}>
+                            Conyuge {dataQuote.ageOfSpouse}
+                          </td>
+                          <td style={{ textAlign: "center" }}>
+                            $ {dataQuote.patner}
+                          </td>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+
+                      {(dataQuote.provider === "Salud Central") |
+                      (dataQuote.childrens === 0) ? (
+                        <tr>
+                          <td style={{ textAlign: "center" }}>
+                            Hijo/s {dataQuote.quantyChildrens}
+                          </td>
+                          <td style={{ textAlign: "center" }}>
+                            $ {dataQuote.childrens}
+                          </td>
+                        </tr>
+                      ) : (
+                        <></>
+                      )}
+
                       {(dataQuote.discount === 0) |
-                      (dataQuote.provider === "SaludCentral") ? (
+                      (dataQuote.provider === "Salud Central") ? (
                         ``
                       ) : (
                         <tr>

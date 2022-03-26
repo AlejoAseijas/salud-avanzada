@@ -23,7 +23,7 @@ function Index() {
         provider: "SaludCentral",
         operator: dataLocal.name + " " + dataLocal.lastName,
         ageClient: parseInt(data.ageClient),
-        sameAges: data.typeAffiliate === "casadoSameRange" ? true : false,
+        sameAges: data.affiliateType === "casadoSameRange" ? true : false,
         ageOfSpouse: data.ageOfSpouse === "" ? false : data.ageOfSpouse,
         isGroup: {
           state: data.group === "false" ? false : true,
@@ -35,6 +35,9 @@ function Index() {
       };
 
       let res = await getQuote(quoteToSend);
+      console.log("data: ", data);
+      console.log("dataToApi: ", quoteToSend);
+      console.log("res: ", res);
       localStorage.setItem("quote", JSON.stringify(res.data.data));
       return navigate("/dashboard/download");
     } catch (err) {
