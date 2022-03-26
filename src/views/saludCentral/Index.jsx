@@ -10,16 +10,31 @@ function Index() {
 
   const handlerClick = async (data) => {
     try {
-      let dataToSend = {
-        provider: "saludcentral",
+      let arrayAgesAdults = [];
+      if (data.adults === 0) {
+        arrayAgesAdults.push(0);
+      } else {
+        let newArraySringAges = data.adults.split(",");
+        newArraySringAges.map((value) => {
+          return arrayAgesAdults.push(parseInt(value));
+        });
+      }
+      let quoteToSend = {
+        provider: "SaludCentral",
         operator: dataLocal.name + " " + dataLocal.lastName,
-        contact: "saludCentral-privado",
-        data: {
-          group: data.group,
-          childrens: data.isChildrens === "false" ? false : data.childrens,
+        ageClient: parseInt(data.ageClient),
+        sameAges: data.typeAffiliate === "casadoSameRange" ? true : false,
+        ageOfSpouse: data.ageOfSpouse === "" ? false : data.ageOfSpouse,
+        isGroup: {
+          state: data.group === "false" ? false : true,
+          data: {
+            minors: data.minors === "" ? false : data.minors,
+            adults: arrayAgesAdults.length === 0 ? false : arrayAgesAdults,
+          },
         },
       };
-      let res = await getQuote(dataToSend);
+
+      let res = await getQuote(quoteToSend);
       localStorage.setItem("quote", JSON.stringify(res.data.data));
       return navigate("/dashboard/download");
     } catch (err) {
@@ -34,9 +49,12 @@ function Index() {
         <Container style={{ maxWidth: "30rem" }} className="  my-2">
           <Formik
             initialValues={{
-              group: "",
-              childrens: "",
-              isChildrens: "",
+              affiliateType: "Soltero",
+              ageClient: "",
+              ageOfSpouse: "",
+              group: "false",
+              minors: 0,
+              adults: 0,
             }}
             validate={(data) => {
               let err = {};
@@ -52,6 +70,62 @@ function Index() {
               <Form className="p-3">
                 <FormBootstrap.Group className="d-flex flex-column mb-3">
                   <FormBootstrap.Label
+                    htmlFor="ageClient"
+                    style={{ color: "#fff" }}
+                  ></FormBootstrap.Label>
+                  <Field
+                    as={FormBootstrap.Control}
+                    type="number"
+                    id="ageClient"
+                    name="ageClient"
+                    placeholder="Edad del cliente"
+                  />
+                </FormBootstrap.Group>
+
+                <FormBootstrap.Group className="d-flex flex-column mb-3">
+                  <FormBootstrap.Label
+                    htmlFor="affiliateType"
+                    style={{ color: "#fff" }}
+                  ></FormBootstrap.Label>
+                  <Field
+                    as={FormBootstrap.Select}
+                    type="text"
+                    id="affiliateType"
+                    name="affiliateType"
+                  >
+                    <option value="">Selecione una opcion</option>
+                    <option label="Soltero" value="Soltero" />
+                    <option
+                      label="Casado y mismo rango de edad"
+                      value="casadoSameRange"
+                    />
+                    <option
+                      label="Casado y distinto rango de edad"
+                      value="Casado"
+                    />
+                  </Field>
+                </FormBootstrap.Group>
+
+                {values.affiliateType === "Casado" ? (
+                  <FormBootstrap.Group className="d-flex flex-column mb-3">
+                    <FormBootstrap.Label
+                      htmlFor="ageOfSpouse"
+                      style={{ color: "#fff" }}
+                    ></FormBootstrap.Label>
+                    <Field
+                      as={FormBootstrap.Control}
+                      type="number"
+                      id="ageOfSpouse"
+                      name="ageOfSpouse"
+                      placeholder="Edad del esposo"
+                    />
+                  </FormBootstrap.Group>
+                ) : (
+                  <></>
+                )}
+
+                <FormBootstrap.Group className="d-flex flex-column mb-3">
+                  <FormBootstrap.Label
                     htmlFor="group"
                     style={{ color: "#fff" }}
                   ></FormBootstrap.Label>
@@ -61,136 +135,42 @@ function Index() {
                     id="group"
                     name="group"
                   >
-                    <option label="" value="" />
-                    <option
-                      label="Individual hasta 29"
-                      value="IndividualHasta29"
-                    />
-                    <option
-                      label="Individual hasta 35"
-                      value="IndividualHasta35"
-                    />
-                    <option
-                      label="Individual hasta 40"
-                      value="IndividualHasta40"
-                    />
-                    <option
-                      label="Individual hasta 50"
-                      value="IndividualHasta50"
-                    />
-
-                    <option
-                      label="Individual hasta 60"
-                      value="IndividualHasta60"
-                    />
-
-                    <option
-                      label="Individual hasta 65"
-                      value="IndividualHasta65"
-                    />
-
-                    <option
-                      label="Individual hasta 70"
-                      value="IndividualHasta70"
-                    />
-
-                    <option
-                      label="Individual hasta 75"
-                      value="IndividualHasta75"
-                    />
-
-                    <option
-                      label="Individual hasta 80"
-                      value="IndividualHasta80"
-                    />
-
-                    <option
-                      label="Individual hasta 85"
-                      value="IndividualHasta85"
-                    />
-
-                    <option
-                      label="Matrimonio hasta 29"
-                      value="MatrimonioHasta29"
-                    />
-                    <option
-                      label="Matrimonio hasta 35"
-                      value="MatrimonioHasta35"
-                    />
-                    <option
-                      label="Matrimonio hasta 40"
-                      value="MatrimonioHasta40"
-                    />
-                    <option
-                      label="Matrimonio hasta 50"
-                      value="MatrimonioHasta50"
-                    />
-
-                    <option
-                      label="Matrimonio hasta 60"
-                      value="MatrimonioHasta60"
-                    />
-
-                    <option
-                      label="Matrimonio hasta 65"
-                      value="MatrimonioHasta65"
-                    />
-
-                    <option
-                      label="Matrimonio hasta 70"
-                      value="MatrimonioHasta70"
-                    />
-
-                    <option
-                      label="Matrimonio hasta 75"
-                      value="MatrimonioHasta75"
-                    />
-
-                    <option
-                      label="Matrimonio hasta 80"
-                      value="MatrimonioHasta80"
-                    />
-
-                    <option
-                      label="Matrimonio hasta 85"
-                      value="MatrimonioHasta85"
-                    />
+                    <option value="false">Individuo</option>
+                    <option value="true">Grupo Familiar</option>
                   </Field>
                 </FormBootstrap.Group>
 
-                <FormBootstrap.Group className="d-flex flex-column mb-3">
-                  <FormBootstrap.Label
-                    htmlFor="isChildrens"
-                    style={{ color: "#fff" }}
-                  ></FormBootstrap.Label>
-                  <Field
-                    as={FormBootstrap.Select}
-                    type="text"
-                    id="isChildrens"
-                    name="isChildrens"
-                  >
-                    <option label="" value="" />
-                    <option label="Tiene hijos" value="true" />
-                    <option label="No tiene hijos" value="false" />
-                  </Field>
-                </FormBootstrap.Group>
-
-                {values.isChildrens === "true" ? (
-                  <FormBootstrap.Group className="d-flex flex-column mb-3">
-                    <FormBootstrap.Label
-                      htmlFor="childrens"
-                      style={{ color: "#fff" }}
-                    ></FormBootstrap.Label>
-                    <Field
-                      as={FormBootstrap.Control}
-                      type="number"
-                      id="childrens"
-                      name="childrens"
-                      placeholder="Edad del cliente"
-                    />
-                  </FormBootstrap.Group>
-                ) : (
+                {values.group === "false" ? (
                   <></>
+                ) : (
+                  <>
+                    <FormBootstrap.Group className="d-flex flex-column mb-3">
+                      <FormBootstrap.Label
+                        htmlFor="minors"
+                        style={{ color: "#fff" }}
+                      ></FormBootstrap.Label>
+                      <Field
+                        as={FormBootstrap.Control}
+                        type="number"
+                        id="minors"
+                        name="minors"
+                        placeholder="Cantidad de Hijos Menores de 20"
+                      />
+                    </FormBootstrap.Group>
+
+                    <FormBootstrap.Group className="d-flex flex-column mb-3">
+                      <FormBootstrap.Label
+                        htmlFor="adults"
+                        style={{ color: "#fff" }}
+                      ></FormBootstrap.Label>
+                      <Field
+                        id="adults"
+                        name="adults"
+                        as={FormBootstrap.Control}
+                        placeholder="Edades de los hijos mayores separados por , sin espacios"
+                      />
+                    </FormBootstrap.Group>
+                  </>
                 )}
 
                 <Container className="text-center">
