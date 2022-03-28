@@ -51,15 +51,23 @@ function Index() {
             </Link>
           </Nav>
           <Nav>
-            <Link
+            <button
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                color: "#fff",
+                backgroundColor: "transparent",
+
+                cursor: "pointer",
+                overflow: "hidden",
+                outline: "none",
+              }}
               onClick={async () => {
                 await logOut();
                 navigate("/logIn");
               }}
-              style={{ fontFamily: "'Open Sans', sans-serif", color: "#fff" }}
             >
               Log In
-            </Link>
+            </button>
           </Nav>
         </Navbar.Collapse>
       </Container>
