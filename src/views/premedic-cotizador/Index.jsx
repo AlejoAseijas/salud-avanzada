@@ -120,6 +120,57 @@ function Index() {
                       label="Individual hasta 59"
                       value="IndividualHasta59"
                     />
+                    <option
+                      label="Individual hasta 29 con 1 hijo"
+                      value="IndividualHasta29Con1Hijo"
+                    />
+                    <option
+                      label="Individual hasta 29 con 2 hijo"
+                      value="IndividualHasta29Con2Hijo"
+                    />
+                    <option
+                      label="Individual hasta 29 con 3 hijo"
+                      value="IndividualHasta29Con3Hijo"
+                    />
+
+                    <option
+                      label="Individual hasta 39 con 1 hijo"
+                      value="IndividualHasta39Con1Hijo"
+                    />
+                    <option
+                      label="Individual hasta 39 con 2 hijo"
+                      value="IndividualHasta39Con2Hijo"
+                    />
+                    <option
+                      label="Individual hasta 39 con 3 hijo"
+                      value="IndividualHasta39Con3Hijo"
+                    />
+
+                    <option
+                      label="Individual hasta 49 con 1 hijo"
+                      value="IndividualHasta49Con1Hijo"
+                    />
+                    <option
+                      label="Individual hasta 49 con 2 hijo"
+                      value="IndividualHasta49Con2Hijo"
+                    />
+                    <option
+                      label="Individual hasta 49 con 3 hijo"
+                      value="IndividualHasta49Con3Hijo"
+                    />
+
+                    <option
+                      label="Individual hasta 59 con 1 hijo"
+                      value="IndividualHasta59Con1Hijo"
+                    />
+                    <option
+                      label="Individual hasta 59 con 2 hijo"
+                      value="IndividualHasta59Con2Hijo"
+                    />
+                    <option
+                      label="Individual hasta 59 con 3 hijo"
+                      value="IndividualHasta59Con3Hijo"
+                    />
 
                     <option
                       label="Matrimonio hasta 29"
