@@ -90,7 +90,7 @@ function Index() {
                     {dataQuote.plan === "DOCTORED1000" ? (
                       <a
                         className="link"
-                        href="https://drive.google.com/file/d/1dyjYId7OgCLuXFqHMyvnGhP5rFI5P-Wh/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1oTn6QAO1PviQQINQhhsQoTYFrfw0qfKj/view?usp=sharing"
                       >
                         VER CARTILLA
                       </a>
@@ -101,7 +101,7 @@ function Index() {
                     {dataQuote.plan === "DOCTORED2000" ? (
                       <a
                         className="link"
-                        href="https://drive.google.com/file/d/1Ndm-PZacKpgwaHHhu8i4zLmwGbsT2UBQ/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1wkySek5HsF4W_CkASdGlvW6JReohENDX/view?usp=sharing"
                       >
                         VER CARTILLA
                       </a>
@@ -113,7 +113,7 @@ function Index() {
                     {dataQuote.plan === "DOCTORED3000" ? (
                       <a
                         className="link"
-                        href="https://drive.google.com/file/d/142NyVQQIJo8CE61jLvAktsLwAOE0T2qD/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1_sGZX2OQaWtIzz8sb_pXnx-BInwnzhq0/view?usp=sharing"
                       >
                         VER CARTILLA
                       </a>
