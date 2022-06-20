@@ -2,7 +2,11 @@ import React from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import { Link } from "react-scroll";
 import logo from "../../assets/logo.jpg";
+import { useNavigate } from "react-router-dom";
+import { logOut } from "../../services/index";
+
 function Index() {
+  const navigate = useNavigate();
   return (
     <Navbar
       collapseOnSelect
@@ -45,6 +49,25 @@ function Index() {
             >
               Contacto
             </Link>
+          </Nav>
+          <Nav>
+            <button
+              style={{
+                fontFamily: "'Open Sans', sans-serif",
+                color: "#fff",
+                backgroundColor: "transparent",
+
+                cursor: "pointer",
+                overflow: "hidden",
+                outline: "none",
+              }}
+              onClick={async () => {
+                await logOut();
+                navigate("/logIn");
+              }}
+            >
+              Log In
+            </button>
           </Nav>
         </Navbar.Collapse>
       </Container>

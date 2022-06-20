@@ -1,0 +1,86 @@
+.pdf-page {
+    margin: 0 auto;
+    padding: 0 .3in;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .3);
+    box-sizing: border-box;
+  }
+  
+  .size-a4 {
+    width: 100vw;
+    height: 8.7in;
+  }
+  
+  
+  header {
+    height: 150px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+  }
+  
+  .pricipal-provider-logo img {
+    height: 150px;
+    width: 230px;
+  
+  }
+  
+  .information {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    width: auto;
+    height: 25px;
+    justify-content: space-between;
+  
+  }
+  
+  .link {
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #1d5eb5;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  h3 {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  th {
+    text-align: center;
+  }
+  
+  tr {
+    text-align: center;
+  }
+  
+  table {
+    border: 1px solid black;
+  }
+  
+  table tr {
+    height: 10px;
+  }
+  
+  #final-price {
+    width: auto;
+    background-color: #1d5eb5;
+  }
+  
+  #final-price .price {
+    font-weight: bold;
+    color: #fff;
+  }

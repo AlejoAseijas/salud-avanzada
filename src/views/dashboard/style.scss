@@ -1,0 +1,40 @@
+#dashboard-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+   background-color: rgba(255, 255, 255, 0.3);
+    height: auto;
+    width: auto;
+    margin: 0 auto;
+    margin-top: 10vh;
+    justify-content: center;
+    padding: .5rem;
+    img{
+        width: 120px;
+    }
+    .img-container{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #dashboard-container{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+       background-color: rgba(255, 255, 255, 0.3);
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+        margin-top: 10vh;
+        justify-items: center;
+        padding: .5rem;
+        img{
+            text-align: center;
+            width: 120px;
+        }
+        .img-container{
+            text-align: center;
+        }
+    }
+  }

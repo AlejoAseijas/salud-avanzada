@@ -1,8 +1,8 @@
 import React from "react";
 import { Form as FormBootstrap, Container, Button } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
-import axios from "axios";
 import { send } from "emailjs-com";
+
 function Index() {
   const sendEmail = async (data) => {
     send(
